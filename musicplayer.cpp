@@ -20,7 +20,7 @@ MusicPlayer::MusicPlayer(QWidget *parent)
     connect(ui->playSlider, &QSlider::sliderMoved,this, &MusicPlayer::setPlayerPosition);
     connect(ui->playSlider, &QSlider::sliderPressed,this, &MusicPlayer::onSliderPressed);
     connect(ui->playSlider, &QSlider::sliderReleased,this, &MusicPlayer::onSliderReleased);
-    connect(m_mediaPlayer,&QMediaPlayer::durationChanged,this,&MusicPlayer::updateDuration);
+    connect(m_mediaPlayer, &QMediaPlayer::durationChanged,this,&MusicPlayer::updateDuration);
     connect(m_mediaPlayer, &QMediaPlayer::positionChanged,this, &MusicPlayer::updatePlayerPosition);
     connect(m_mediaPlayer, &QMediaPlayer::playbackStateChanged, this, &MusicPlayer::handlePlaybackStateChanged);
     connect(m_mediaPlayer, &QMediaPlayer::mediaStatusChanged, this, &MusicPlayer::handleMediaStatusChanged);
@@ -158,14 +158,17 @@ void MusicPlayer::on_loopModeBtn_clicked()
     case LoopAll:
         m_loopMode=LoopSingle;
         ui->loopModeBtn->setIcon(QIcon(":/Resources/loopone.svg"));
+        ui->loopModeBtn->setToolTip("单曲循环");
         break;
     case LoopSingle:
         m_loopMode=LoopRandom;
         ui->loopModeBtn->setIcon(QIcon(":/Resources/looprandom.svg"));
+        ui->loopModeBtn->setToolTip("随机播放");
         break;
     case LoopRandom:
         m_loopMode=LoopAll;
         ui->loopModeBtn->setIcon(QIcon(":/Resources/loopall.svg"));
+        ui->loopModeBtn->setToolTip("顺序播放");
         break;
     default:
         break;
@@ -558,9 +561,7 @@ bool MusicPlayer::eventFilter(QObject *obj, QEvent *event)
         }
         return false;
     }
-    if (m_volumeSlider &&
-        (obj == m_volumeSlider ||
-         obj->parent() == m_volumeSlider))
+    if (m_volumeSlider && (obj == m_volumeSlider ||obj->parent() == m_volumeSlider))
     {
         switch (event->type())
         {
