@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/next.svg</file>
+        <file>Resources/opendir.svg</file>
+        <file>Resources/pause.svg</file>
+        <file>Resources/play.svg</file>
+        <file>Resources/previous.svg</file>
+        <file>Resources/volume.svg</file>
+        <file>Resources/player.svg</file>
+        <file>Resources/mute.svg</file>
+        <file>Resources/loopall.svg</file>
+        <file>Resources/loopone.svg</file>
+        <file>Resources/looprandom.svg</file>
+        <file>Resources/darkmode.svg</file>
+        <file>Resources/lightmode.svg</file>
+        <file>Resources/darkmodebackground.png</file>
+        <file>Resources/lightmodebackground.png</file>
+        <file>Resources/defaultalbum.png</file>
+    </qresource>
+</RCC>
