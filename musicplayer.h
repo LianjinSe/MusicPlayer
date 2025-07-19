@@ -56,7 +56,6 @@ private slots:
     void onSliderReleased();
 
     // 状态相关
-    void onPlaybackStateChanged(QMediaPlayer::PlaybackState state);
     void handleMediaStatusChanged(QMediaPlayer::MediaStatus status);
     void handlePlaybackStateChanged(QMediaPlayer::PlaybackState state);
     void handleMetaDataChanged();
@@ -102,8 +101,8 @@ private:
     QString m_currentMusicPath;
     QString lastList;
     int lastIndex;
-    QString defaultMusicPath="../../Music";
-    QString defaultConfigPath="../../config.txt";
+    QString defaultMusicPath="./Music";
+    QString defaultConfigPath="./config.txt";
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;

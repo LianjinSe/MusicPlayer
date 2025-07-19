@@ -228,18 +228,6 @@ void MusicPlayer::onSliderReleased() {
     setPlayerPosition(ui->playSlider->value());
 }
 
-void MusicPlayer::onPlaybackStateChanged(QMediaPlayer::PlaybackState state) {
-    if (state == QMediaPlayer::PlayingState) {
-        ui->playBtn->setIcon(QIcon(":/Resources/pause.svg"));
-    } else {
-        ui->playBtn->setIcon(QIcon(":/Resources/play.svg"));
-    }
-    if (state == QMediaPlayer::StoppedState &&
-        m_mediaPlayer->mediaStatus() == QMediaPlayer::EndOfMedia) {
-        on_nextSongBtn_clicked();
-    }
-}
-
 void MusicPlayer::handlePlaybackStateChanged(QMediaPlayer::PlaybackState state)
 {
 
